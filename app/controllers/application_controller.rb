@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def hello
     unless session[:name]
-      redirect_to controller: 'sessions', action: 'new'
+      redirect_to login_path
     end
   end
 
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     unless current_user
-      redirect_to controller: 'sessions', action: 'new'
+      redirect_to login_path
     end
   end
 
